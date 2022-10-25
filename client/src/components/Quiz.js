@@ -49,7 +49,6 @@ const Quiz = () => {
         return { newScore: prevScore.newScore + 10 };
       });
       e.target.classList.add("bg-green-500");
-      // e.target.classList.remove("hover:bg-[#2FBACF] hover:text-white");
     } else {
       e.target.classList.add("bg-red-500");
     }
@@ -80,28 +79,28 @@ const Quiz = () => {
       <div className='flex flex-col gap-6 md:flex-row'>
         <Button
           value='Noun'
-          classes='hover:bg-[#2FBACF] hover:text-white '
+          classes='hover:scale-[1.1] disabled:scale-[1]'
           onClick={answerClickHandler}
           id='noun'
           disabled={optionChosen}
         />
         <Button
           value='Adverb'
-          classes='hover:bg-[#2FBACF] hover:text-white '
+          classes='hover:scale-[1.1] disabled:scale-[1]'
           onClick={answerClickHandler}
           id='adverb'
           disabled={optionChosen}
         />
         <Button
           value='Adjective'
-          classes='hover:bg-[#2FBACF] hover:text-white '
+          classes='hover:scale-[1.1] disabled:scale-[1]'
           onClick={answerClickHandler}
           id='adjective'
           disabled={optionChosen}
         />
         <Button
           value='Verb'
-          classes='hover:bg-[#2FBACF] hover:text-white '
+          classes='hover:scale-[1.1] disabled:scale-[1]'
           onClick={answerClickHandler}
           id='verb'
           disabled={optionChosen}
@@ -110,7 +109,7 @@ const Quiz = () => {
       {currQuestion === words.length - 1 ? (
         <Button
           value='Finish'
-          classes='ml-auto absolute bottom-5 lg:bottom-6 lg:right-6 py-3 px-4'
+          classes='ml-auto absolute bottom-5 lg:bottom-6 lg:right-6 py-3 px-4 hover:scale-[1.05]'
           onClick={() => {
             setCurPage("rank");
             postScore();
@@ -119,7 +118,7 @@ const Quiz = () => {
       ) : (
         <Button
           value={<GrFormNextLink />}
-          classes={`ml-auto absolute bottom-5 lg:bottom-6 lg:right-6 py-3 px-4 ${
+          classes={`ml-auto absolute bottom-5 lg:bottom-6 lg:right-6 py-3 px-4 hover:scale-[1.05] ${
             !optionChosen ? "hidden" : ""
           }`}
           onClick={nextQuestion}

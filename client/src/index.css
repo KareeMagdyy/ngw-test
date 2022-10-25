@@ -6,8 +6,3 @@ body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
 }
-
-button:disabled:hover {
-  background: white;
-  color: #1c2244;
-}

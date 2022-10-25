@@ -67,6 +67,8 @@ const Quiz = () => {
       console.log(err);
     }
   };
+  if (words.length === 0) return;
+
   return (
     <Card classes='gap-16 relative overflow-hidden'>
       {answered !== 0 && (

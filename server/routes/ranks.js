@@ -12,23 +12,43 @@ router.post("/", (req, res) => {
   const { newScore } = req.body;
   // Add rank to ranks list
   const { scoresList } = JSON.parse(fs.readFileSync("./TestData.json", "utf8"));
-  scoresList.push(newScore);
   //Use below Line if we want to manipulate data on the main JSON file
+  // scoresList.push(newScore);
   // fs.writeFileSync("./TestData.json", JSON.stringify(rank), "utf8");
 
   //sort scores for search results
   const sortedScores = scoresList.sort((a, b) => a - b);
   //Get number of scores < newScore
   const belowScores = sortedScores.findIndex(
-    (score) => score === parseInt(newScore)
+    (rank) => rank === parseInt(newScore)
   );
+
   //Get Student Rank %
   let studentRank = (belowScores / scoresList.length) * 100;
   // Round to the nearest hundred
   studentRank = Math.round((studentRank * 100) / 100);
 
+  //get the count of each score
+  const count = {};
+  for (const element of sortedScores) {
+    if (count[element]) {
+      count[element] += 1;
+    } else {
+      count[element] = 1;
+    }
+  }
+
+  //head count for each score
+  const eachScoreCount = Object.values(count);
+
   // Return new list
-  res.json({ rank: newScore, sortedScores, studentRank });
+  res.json({
+    rank: newScore,
+    sortedScores,
+    studentRank,
+    count,
+    eachScoreCount,
+  });
 });
 
 module.exports = router;

@@ -1,12 +1,13 @@
 const express = require("express");
+const cors = require("cors");
 const wordsRoute = require("./routes/words");
 const ranksRoute = require("./routes/ranks");
-const fs = require("fs");
 
 const app = express();
 
 // App Middleware
 app.use(express.json());
+app.use(cors());
 
 //Routes Middleware
 app.use("/api/words", wordsRoute); // Words Endpoint

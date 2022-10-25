@@ -26,12 +26,12 @@ npm run client
 
 JavaScript
 
-## Tools
+## Tools:
 
--React
--Express
--TailwindCss
--ChartJS
+- React
+- Express
+- TailwindCss
+- ChartJS
 
-#### Author : Kareem Magdy
+### Author : Kareem Magdy
 

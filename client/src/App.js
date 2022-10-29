@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { QuizContext } from "./helpers/Contexts";
+import logoImg from "./assets/logo.svg";
 import Main from "./components/Main";
 import Quiz from "./components/Quiz";
 import Rank from "./components/Rank";
@@ -13,7 +14,7 @@ function App() {
     <main className='flex flex-col  items-center justify-around h-screen bg-[#1C2244]'>
       <img
         className='max-w-full w-44 md:w-56 bg-white p-5 rounded-lg'
-        src='https://contents.nagwa.com/content/images/logo.svg'
+        src={logoImg}
         alt='logo'
       />
       <QuizContext.Provider

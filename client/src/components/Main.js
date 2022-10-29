@@ -14,7 +14,7 @@ const Main = () => {
       </p>
       <Button
         value='Start'
-        classes='mt-auto text-white hover:text-[#2FBACF] outline outline-2 bg-transparent'
+        classes='mt-auto hover:text-[#2FBACF] outline outline-2 bg-transparent text-[#fff]'
         onClick={clickHandler}
       />
     </Card>
